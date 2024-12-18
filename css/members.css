@@ -1,0 +1,710 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+*::after, *::before {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #FF3B3F;
+}
+
+ul, ol {
+  padding-left: 2.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  font-family: inherit;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: inherit;
+}
+
+.btn-primary {
+  display: inline-block;
+  cursor: pointer;
+  color: #FFF;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem auto 0 auto;
+  text-decoration: none;
+  background-color: #FF3B3F;
+  border-radius: 2px;
+  border: 0;
+  text-align: center;
+}
+
+body {
+  margin-top: 10px;
+  font-size: 0.875rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5;
+  font-family: 'Lato', sans-serif;
+  background: #E4E4E4;
+  color: #292b2c;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  /*以下を加えるとスティッキーヘッダと被らない*/
+  /* padding-top: 37%;
+  margin-bottom: 37%; */
+}
+
+@media (min-width: 576px) {
+  body {
+    font-size: 0.995rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+/* ナビゲーションバー 設定
+------------------------------------------------------------*/
+@media only screen and (min-width: 800px){
+	body{
+		font-size:14px;
+	}
+	
+  a#menu{
+		display:none;
+	}	
+
+	.panel{
+		display:block !important;
+	}
+
+	#mainnav{
+		position:fixed;
+		top: 0;
+		width:100%;
+		z-index:500;
+	}
+
+	#mainnav ul{
+		text-align: right;
+		padding-right: 30px;
+	}
+
+	#mainnav li{
+		display: inline-block;
+		padding: 45px 10px 20px;
+		font-size: 14px;
+		font-weight: 300;
+	}
+	
+  #mainnav a{
+		color: #000;
+	}
+	
+	#mainnav.changeNav{
+		background: rgba(255,255,255,.9);
+		border-bottom: 1px solid #d1d1d1;
+	}
+	
+	#mainnav.changeNav li{
+		padding: 20px 10px;
+	}
+
+}
+.grid {
+  display: grid;
+  padding-top: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card styles for rotation */
+.rotate-container {
+  position: relative;
+}
+
+.rotate-container .card-front, .rotate-container .card-back {
+  width: 100%;
+  height: 100%;
+  transform: perspective(600px) rotateY(0deg);
+  backface-visibility: hidden;
+  transition: all .5s linear 0s;
+}
+
+.rotate-container .card-back {
+  transform: perspective(1600px) rotateY(180deg);
+  position: absolute;
+  top: 0;
+}
+
+.rotate-container .rotate-card-front {
+  transform: perspective(1600px) rotateY(-180deg);
+}
+
+.rotate-container .rotate-card-back {
+  transform: perspective(1600px) rotateY(0deg);
+}
+
+/* Modified card styles */
+.card {
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  background: white;
+  border: 1px solid rgba(169, 169, 169, 0.5);
+  border-radius: .25rem;
+  
+}
+
+.card .card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #EFEFEF;
+  border-bottom: 1px solid rgba(169, 169, 169, 0.5);
+}
+
+.card .card-header p {
+  margin: 0;
+}
+
+.card .card-background {
+  
+  background: url("https://static.pexels.com/photos/443374/pexels-photo-443374.jpeg");
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+#fujiemon {
+  background: url("../images/fujiemon-background.png");
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+
+#kotan  {
+  background: url("../images/koki_background.png");
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+#funayama  {
+  background: url("../images/moon.png");
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+#hiyori  {
+  background: url("../images/yamadah.png");
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+#hinase  {
+  background: url("../images/hinaseh.png");
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+#keisuke  {
+  background: url("../images/logo_qiita.png");
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+#n0nakamura {
+  background: #dda0dd;
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+#Haru  {
+  background: url("../images/Haru_background.jpg");
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+#hayamamo {
+  background: url("../images/hayamamo_background.jpg");
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+
+/*上の書き方だとmemberの数分同じものが増えるのでどうにかしたい*/
+.card .card-block {
+  padding: 1rem;
+}
+
+.card .card-block .card-title {
+  margin-bottom: 0;
+}
+
+.card .card-block h4 ~ h4 {
+  margin: 1rem 0 0.5rem 0;
+}
+
+.card .avatar {
+  max-width: 6em;
+  max-height: 6em;
+  margin-top: -4em;
+  margin-bottom: 1em;
+  border: 4px solid white;
+  border-radius: 50%;
+  background: radial-gradient(#e3e3e3);
+}
+
+.card .btn {
+  margin-bottom: 1em;
+}
+
+.card .social-links {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.card .social-links li {
+  margin: .5em;
+}
+
+.card .social-links li a {
+  font-size: 1.5em;
+}
+.snsbtniti {
+  list-style: none;
+}
+
+
+.card .social-links {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.card .social-links li {
+  margin: 0.5em;
+}
+
+.card .social-links li a {
+  font-size: 1.5em;
+}
+
+/* ボタン全体 */
+.flowbtn5 {
+  font-family: "Times New Roman", sans-serif; /* 好きなフォントに変えてね */
+  border-radius: 13px;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 33px;
+  color: #fff;
+  transition: 0.5s;
+  text-decoration: none;
+}
+/* アイコンをど真ん中に*/
+.flowbtn5 i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* Twitter */
+.fl_tw1 {
+  background: #55acee;
+}
+/* 問い合わせ */
+.fl_ma1 {
+  background: #f3981d;
+}
+/* Facebook */
+.fl_fb1 {
+  background: #3b5998;
+}
+/* note */
+.fl_nt1 {
+  background: #a09bd8;
+}
+/* GitHub */
+.fl_gh1 {
+  color: #ffffff;
+  background: #000000;
+}
+/* Mastodon */
+.fl_mdn1 {
+  color: #ffffff;
+  background: #000000;
+}
+
+/* Instagram紫グラデ背景色 */
+.insta_btn5 {
+  background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+}
+/* Instagramオレンジグラデ背景色 */
+.insta_btn5:before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: -1px;
+  width: 45px;
+  height: 34px;
+  background: -webkit-radial-gradient(
+    #ffdb2c 10%,
+    rgba(255, 105, 34, 0.65) 55%,
+    rgba(255, 88, 96, 0) 70%
+  );
+  background: radial-gradient(
+    #ffdb2c 5%,
+    rgba(255, 105, 34, 0.65) 55%,
+    rgba(255, 88, 96, 0) 70%
+  );
+}
+/* Instagramアイコン調整 */
+.insta_btn5 .fa-instagram {
+  font-size: 40px;
+}
+
+/* アイコンボタン下テキスト調整 */
+.flowbtn5 div {
+  font-size: 11px;
+  color: #666;
+  position: relative;
+  top: 45px;
+}
+/* アイコンボタンにマウスホバーした時の指定*/
+.flowbtn5:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  text-decoration: none;
+}
+/* ulタグの内側余白を０にする */
+ul.snsbtniti {
+  padding: 0 !important;
+}
+/* アイコンボタン全体の位置 */
+.snsbtniti {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+/* アイコンボタン同士の余白調整 */
+.snsbtniti li {
+  flex: 0 0 33%;
+  text-align: center !important;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  font-size: 48px;
+  border-radius: 8px;
+}
+@media only screen and (min-width: 1200px){
+  .inner{
+    width: 1024px;
+    padding-bottom: 120px;
+  }
+  section h2{
+    padding: 70px 0 20px;
+  }
+  .txt h2{
+    padding: 0 0 20px !important;
+  }
+}
+
+@media only screen and (min-width: 800px){
+  body{
+    font-size:14px;
+  }
+
+  a#menu{
+    display:none;
+  }	
+
+  .panel{
+    display:block !important;
+  }
+
+  #mainnav{
+    position:fixed;
+    top: 0;
+    width:100%;
+    z-index:500;
+  }
+
+  #mainnav ul{
+    text-align: right;
+    padding-right: 30px;
+  }
+
+  #mainnav li{
+    display: inline-block;
+    padding: 45px 10px 20px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  #mainnav a{
+    color: #000;
+  }
+
+  #mainnav.changeNav{
+    background: rgba(255,255,255,.9);
+    border-bottom: 1px solid #d1d1d1;
+  }
+
+  #mainnav.changeNav li{
+    padding: 20px 10px;
+  }
+
+  /* SEC02 MESSAGE
+  -----------------*/
+  .txt, .bg{
+    width: 50%;
+    float: left;
+    display: table;
+  background: #bdbdbd;
+  }
+
+  #sec02_02 .txt, #sec02_02 .bg{
+    float: right;
+  }
+
+  .vMid{
+    display: table-cell;
+    padding: 0 100px;
+    vertical-align: middle;
+  }
+
+  /* SEC03 SERVICE MESSAGE STORY
+  -----------------*/
+  .col3{
+    text-align: center;
+  }
+
+  .col3 li{
+    display: inline-block;
+    width: 30%;
+    padding: 0 1.5%;
+    margin-bottom: 0;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  /* SEC05 PROFILE
+  -----------------*/
+  #sec05{
+    padding-top: 120px;
+  }
+
+  #footer{
+    padding: 30px 10px 70px 0;
+  }
+}
+
+@media only screen and (min-width: 641px){
+  .col2 li{
+    width: 40%;
+    padding: 0 3%;
+    vertical-align: top;
+  }
+}
+
+@media only screen and (max-width: 640px){
+  #map iframe{
+    width: 96% !important;
+    left: 2%;
+  }
+}
+
+@media only screen and (max-width: 799px){
+  #slogan h1{
+    font-size: 31px;
+  }
+
+  #slogan h2{
+    font-size: 16px;
+  }
+
+/* ナビゲーションバー 設定
+------------------------------------------------------------*/
+  a#menu{
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+  }
+
+  #menuBtn{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 2px;
+    margin: -1px 0 0 -7px;
+    background: #fff;
+    transition: .2s;
+  }
+
+  #menuBtn:before, #menuBtn:after{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+  }
+
+  #menuBtn:before{
+    margin-top: -7px;
+  }
+
+  #menuBtn:after{
+    margin-top: 5px;
+  }
+
+  a#menu .close{
+    background: transparent;
+  }
+
+  a#menu .close:before, a#menu .close:after{
+    margin-top: 0;
+  }
+
+  a#menu .close:before{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  a#menu .close:after{
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+
+  .panel{
+    width: 100%;
+    display: none;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 100;
+  }
+
+  #mainnav{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    z-index:500;
+  }
+
+  #mainnav ul{
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+    text-align: left;
+  }
+
+  #mainnav li a{
+    position: relative;
+    display:block;
+    padding:15px 25px;
+    border-bottom: 1px solid #ccc;
+    color: #000;
+    font-weight: 400;
+  }
+
+  #mainnav li a:before{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 6px;
+    height: 6px;
+    margin: -4px 0 0 0;
+    border-top: solid 2px #000;
+    border-right: solid 2px #000;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .col3 li{
+    margin: 0 auto;
+    display: block;
+  max-width: 288px;
+  }
+}
+
+@media only screen and (max-width: 1199px){
+  section h2{
+    padding: 50px 0 20px 0;
+  }
+  #sec01 h2{
+    padding: 70px 0 20px;
+  }
+  .vMid{
+    padding: 0 20px;
+  }
+}
+
